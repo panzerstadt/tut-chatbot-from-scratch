@@ -1,9 +1,13 @@
 #image: jupyter/scipy-notebook:17aba6048f44:a1aebbf3764d
+# https://github.com/Paperspace/jupyter-docker-stacks/tree/master/scipy-notebook
 version: "3"
 
 services:
   jupyter:
-    context: ./
-    dockerfile: Dockerfile
+    build:
+      context: ./
+      dockerfile: Dockerfile
     volumes:
-      - ./docker_directories:/
+      - ./docker_dir:/home/jovyan
+    ports:
+      - 8888:8888
