@@ -1,0 +1,9 @@
+#image: jupyter/scipy-notebook:17aba6048f44:a1aebbf3764d
+version: "3"
+
+services:
+  jupyter:
+    context: ./
+    dockerfile: Dockerfile
+    volumes:
+      - ./docker_directories:/
